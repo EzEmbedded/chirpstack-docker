@@ -31,8 +31,6 @@ services:
     image: postgres:9.6-alpine
     environment:
       - POSTGRES_PASSWORD=root
-    security_opt:
-      - seccomp:unconfined
     volumes:
       - ./configuration/postgresql/initdb:/docker-entrypoint-initdb.d
       - postgresqldata:/var/lib/postgresql/data
