@@ -1,8 +1,8 @@
-version: "1"
+version: "2"
 
 services:
   chirpstack-network-server:
-    image: scanlidocker/loraserver-ns:1
+    image: scanlidocker/loraserver-ns:v0.21
     volumes:
       - ./configuration/chirpstack-network-server:/etc/chirpstack-network-server
     depends_on:
@@ -10,7 +10,7 @@ services:
       - mosquitto
 
   chirpstack-application-server:
-    image: scanlidocker/loraserver-app:1
+    image: scanlidocker/loraserver-app:v0.21
     ports:
       - 8080:8080
     volumes:
@@ -19,7 +19,7 @@ services:
       - chirpstack-network-server
 
   chirpstack-gateway-bridge:
-    image: scanlidocker/loraserver-bdg:1
+    image: scanlidocker/loraserver-bdg:v0.21
     ports:
       - 1700:1700/udp
     volumes:
