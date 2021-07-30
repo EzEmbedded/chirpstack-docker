@@ -2,7 +2,7 @@ version: "3"
 
 services:
   chirpstack-network-server:
-    image: scanlidocker/oraserver-ns:3
+    image: scanlidocker/loraserver-ns:3
     volumes:
       - ./configuration/chirpstack-network-server:/etc/chirpstack-network-server
     depends_on:
@@ -10,7 +10,7 @@ services:
       - mosquitto
 
   chirpstack-application-server:
-    image: scanlidocker/oraserver-app:3
+    image: scanlidocker/loraserver-app:3
     ports:
       - 8080:8080
     volumes:
@@ -19,7 +19,7 @@ services:
       - chirpstack-network-server
 
   chirpstack-gateway-bridge:
-    image: scanlidocker/oraserver-bdg:3
+    image: scanlidocker/loraserver-bdg:3
     ports:
       - 1700:1700/udp
     volumes:
