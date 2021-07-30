@@ -2,7 +2,7 @@ version: "2"
 
 services:
   chirpstack-network-server:
-    image: scanlidocker/chirpstack-network-server:v0.21
+    image: scanlidocker/chirpstack-network-server
     volumes:
       - ./configuration/chirpstack-network-server:/etc/chirpstack-network-server
     depends_on:
@@ -10,7 +10,7 @@ services:
       - mosquitto
 
   chirpstack-application-server:
-    image: scanlidocker/chirpstack-application-server:v0.21
+    image: scanlidocker/chirpstack-application-server
     ports:
       - 8080:8080
     volumes:
@@ -19,7 +19,7 @@ services:
       - chirpstack-network-server
 
   chirpstack-gateway-bridge:
-    image: scanlidocker/chirpstack-gateway-bridge:v0.21
+    image: scanlidocker/chirpstack-gateway-bridge
     ports:
       - 1700:1700/udp
     volumes:
