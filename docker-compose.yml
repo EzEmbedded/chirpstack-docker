@@ -28,7 +28,7 @@ services:
       - mosquitto
 
   postgresql:
-    image: postgres:9.6-alpine
+    image: arm32v7/postgres:13.3-alpine3.13
     environment:
       - POSTGRES_PASSWORD=root
     volumes:
