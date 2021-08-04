@@ -29,8 +29,8 @@ services:
 
   postgresql:
     image: arm32v7/postgres:9-alpine3.14
-    security-opt:
-      - seccomp:unconfined
+    # security_opt:
+    #   - seccomp:unconfined
     environment:
       - POSTGRES_PASSWORD=root
     volumes:
