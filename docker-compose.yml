@@ -3,6 +3,7 @@ version: "2"
 services:
   chirpstack-network-server:
     image: scanlidocker/chirpstack-network-server:v0.21
+    restart: always
     volumes:
       - ./configuration/chirpstack-network-server:/etc/chirpstack-network-server
     depends_on:
@@ -11,6 +12,7 @@ services:
 
   chirpstack-application-server:
     image: scanlidocker/chirpstack-application-server:v0.21
+    restart: always
     ports:
       - 8080:8080
     volumes:
@@ -20,6 +22,7 @@ services:
 
   chirpstack-gateway-bridge:
     image: scanlidocker/chirpstack-gateway-bridge:v0.21
+    restart: always
     ports:
       - 1700:1700/udp
     volumes:
@@ -29,6 +32,7 @@ services:
 
   postgresql:
     image: arm32v7/postgres:9-alpine3.14
+    restart: always
     security_opt:
       - seccomp:unconfined
     environment:
@@ -39,6 +43,7 @@ services:
 
   redis:
     image: redis:5-alpine
+    restart: always
     security_opt:
       - seccomp:unconfined   
     volumes:
@@ -46,6 +51,7 @@ services:
 
   mosquitto:
     image: eclipse-mosquitto:2
+    restart: always
     ports:
       - 1883:1883
     volumes: 
