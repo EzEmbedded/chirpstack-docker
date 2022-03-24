@@ -1,5 +1,36 @@
 # ChirpStack Docker example
 
+docker run hello-world
+docker login
+docker tag hello-world:latest scanlidocker/loraserver-app:v0.21
+docker push scanlidocker/loraserver-app:v0.21
+
+systemctl restart docker
+
+docker tag scanlidocker/chirpstack-application-server chirpstack-application-server
+
+docker tag scanlidocker/chirpstack-network-server:v0.21 chirpstack-network-server
+
+docker tag scanlidocker/chirpstack-gateway-bridge:v0.21 chirpstack-gateway-bridge
+df -hl
+apt install docker.io -y
+
+docker run -d -p 1880:1880 -p 5000:5000/udp -p 6000:6000/udp -p 1700:1700/udp --restart=always -v node_red_data:/data --name lora_nodered nodered/node-red
+docker run -d -p 1880:1880 -p 2000:2000/udp -p 3000:3000/udp --restart=always -v node_red_data:/data --name lora_nodered nodered/node-red
+
+docker run -d -p 1880:1880 --restart=always -v node_red_data:/data --name lora_nodered nodered/node-red
+docker run -d -p 9000:9000  --restart=always  -v /var/run/docker.sock:/var/run/docker.sock  --name lora_portainer  scanlidocker/portainer:v0.1
+docker run -d -p 9000:9000  --restart=always  -v /var/run/docker.sock:/var/run/docker.sock  --name portainer  portainer/portainer
+
+dd if=/dev/zero of=/dev/mmcblk2p2 bs=1024 seek=8 count=1
+
+nmcli connection modify 'Wired connection 1' connection.autoconnect yes ipv4.method manual ipv4.address 192.168.14.14/24 ipv4.gateway 192.168.14.1 ipv4.dns 114.114.114.114
+
+
+
+
+
+
 This repository contains a skeleton to setup the [ChirpStack](https://www.chirpstack.io)
 open-source LoRaWAN Network Server stack using [Docker Compose](https://docs.docker.com/compose/).
 
