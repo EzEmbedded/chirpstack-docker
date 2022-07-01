@@ -1,3 +1,26 @@
+nanopi core  install docker and docker-compose
+1、修改成国内源
+    文件  /etc/apt/sources.list.d/nodesource.list 内容：
+
+deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial main multiverse restricted universe
+deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-backports main multiverse restricted universe
+deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-proposed main multiverse restricted universe
+deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-security main multiverse restricted universe
+deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-updates main multiverse restricted universe
+deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial main multiverse restricted universe
+deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-backports main multiverse restricted universe
+deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-proposed main multiverse restricted universe
+deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-security main multiverse restricted universe
+deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-updates main multiverse restricted universe
+
+2、sudo apt-get update
+3、sudo apt-get install docker.io
+4、安装 docker-compose 
+      将 https://github.com/docker/compose 的合适的发布版下载到
+      /usr/local/bin/  目录中，将docker-compose-linux-armv7 改名为docker-compose  并赋予可执行权限。
+
+df -hl
+
 # ChirpStack Docker example
 
 docker run hello-world
