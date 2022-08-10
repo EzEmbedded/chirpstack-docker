@@ -53,7 +53,7 @@ services:
       - LoraWeb
 
   portainer:
-    image: scanlidocker/portainer:v0.1
+    image: portainer/portainer:latest
 #    restart: always
     ports:
       - 9000:9000
