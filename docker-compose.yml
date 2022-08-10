@@ -36,10 +36,23 @@ services:
     ports:
       - 8088:80
     volumes:
-      - ./nginx/nginxconfig:/etc/nginx/conf.d:rw
-      - ./nginx/dist:/etc/nginx/usr/share/nginx/html:rw
+      - ./nginx/nginxconfig:/etc/nginx/conf.d
+      - ./nginx/dist:/etc/nginx/usr/share/nginx/html
+      - ./nginx/log:/var/log/nginx
     depends_on: 
       - chirpstack-application-server
+
+  node-red:
+    image: node-red:latest-16-minimal
+#    restart: always
+    ports:
+      - 1880:1880
+    volumes:
+      - ./node_red_data:/data   
+    depends_on: 
+      - LoraWeb
+
+
       
   postgresql:
     image: arm32v7/postgres:9-alpine3.14

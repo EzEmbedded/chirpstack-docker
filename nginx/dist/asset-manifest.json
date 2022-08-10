@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.19247293.css",
-    "main.js": "/static/js/main.8d849241.js",
+    "main.js": "/static/js/main.57e58be1.js",
     "static/media/maps.svg": "/static/media/maps.44830a0cc2298dec4e1e3bb5ee9a0c98.svg",
     "static/media/frame2.svg": "/static/media/frame2.08ec9404a835a4e2f5802d46fbeb325e.svg",
     "static/media/frame3.svg": "/static/media/frame3.530b20575fa44c0b2cc6954ce68746a0.svg",
@@ -44,10 +44,10 @@
     "static/media/路径2备份.svg": "/static/media/路径2备份.411aff727f8a6cb07f31607d03a5a55b.svg",
     "static/media/_11.svg": "/static/media/_11.2699a2cdf0951d5bb0398a361c57a188.svg",
     "main.19247293.css.map": "/static/css/main.19247293.css.map",
-    "main.8d849241.js.map": "/static/js/main.8d849241.js.map"
+    "main.57e58be1.js.map": "/static/js/main.57e58be1.js.map"
   },
   "entrypoints": [
     "static/css/main.19247293.css",
-    "static/js/main.8d849241.js"
+    "static/js/main.57e58be1.js"
   ]
 }
