@@ -43,7 +43,7 @@ services:
       - chirpstack-application-server
 
   node-red:
-    image: node-red:latest-16-minimal
+    image: nodered/node-red:latest-16-minimal
 #    restart: always
     ports:
       - 1880:1880
@@ -52,10 +52,20 @@ services:
     depends_on: 
       - LoraWeb
 
+  portainer:
+    image: scanlidocker/portainer:v0.1
+#    restart: always
+    ports:
+      - 9000:9000
+    volumes:
+      - ./portainer:/var/run/docker.sock   
+    depends_on: 
+      - node-red
 
       
   postgresql:
-    image: arm32v7/postgres:9-alpine3.14
+#    image: arm32v7/postgres:9-alpine3.14
+    image: postgres:14-alpine
 #    restart: always
     security_opt:
       - seccomp:unconfined
